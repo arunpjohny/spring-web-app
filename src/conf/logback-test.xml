@@ -1,0 +1,29 @@
+<configuration scan="true" scanPeriod="30 seconds">
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+			<layout class="ch.qos.logback.classic.PatternLayout">
+				<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%t] %p %c - %m [%class %M %L] %ex{full} %n</pattern>
+			</layout>
+		</encoder>
+	</appender>
+
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${catalina.base}/logs/cougar.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>cougar-%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+
+		<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+			<layout class="ch.qos.logback.classic.PatternLayout">
+				<pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} [%t] %p %c - %m [%class %M %L] %ex{full} %n</pattern>
+			</layout>
+		</encoder>
+	</appender>
+
+	<root level="WARN">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>

@@ -1,0 +1,377 @@
+body {
+  background-color: #E9E9E7;
+  overflow-y: scroll;
+}
+.app-logo {
+  padding: 10px 0;
+}
+.navbar-fixed-top {
+  background-color: #E7E7E9;
+}
+.navbar-fixed-top + .container {
+  margin-top: 40px;
+}
+.app-header {
+  height: 85px;
+}
+.app-header .phone h4, .app-header .phone h5, .app-header .phone h6 {
+  display: inline;
+}
+.app-header .email a {
+  color: #226899;
+}
+#page-container {
+  min-height: 300px;
+}
+.app-content {
+  background-color: #FFFFFF;
+  padding: 5px 10px;
+}
+.ajax-message-wrapper {
+  position: relative;
+  width: 100%;
+}
+#ajax-messages {
+  display: none;
+  position: fixed;
+  right: 5px;
+  top: 140px;
+  z-index: 100;
+}
+.theme-default .nivoSlider {
+  margin-bottom: 0px;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.bordered {
+  border-top: 2px solid #e1e1e1;
+  border-right: 2px solid #e1e1e1;
+  border-bottom: 2px solid #e1e1e1;
+  border-left: 2px solid #e1e1e1;
+}
+.bordered-light {
+  border-top: 1px solid #e1e1e1;
+  border-right: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+  border-left: 1px solid #e1e1e1;
+}
+.bordered-light-t {
+  border-top: 1px solid #e1e1e1;
+}
+.bordered-light-r {
+  border-right: 1px solid #e1e1e1;
+}
+.bordered-light-b {
+  border-bottom: 1px solid #e1e1e1;
+}
+.bordered-light-l {
+  border-left: 1px solid #e1e1e1;
+}
+.rounded-border {
+  border-radius: 10px;
+}
+.rounded-border-small {
+  border-radius: 5px;
+}
+.title {
+  color: #015890;
+  margin-bottom: 5px;
+}
+.article {
+  border-top: 2px solid #e1e1e1;
+  border-right: 2px solid #e1e1e1;
+  border-bottom: 2px solid #e1e1e1;
+  border-left: 2px solid #e1e1e1;
+  border-radius: 10px;
+  margin: 5px 0;
+  min-height: 25px;
+  padding: 7px;
+}
+.article  > header {
+  border-top: 1px solid #e1e1e1;
+  border-right: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+  border-left: 1px solid #e1e1e1;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 10px rgba(83, 83, 83, 0.1) inset;
+  color: #226899;
+  padding: 4px 6px;
+}
+.article  > header.type2 {
+  border: none;
+  box-shadow: none;
+  padding: 4px 6px 4px 0;
+  color: #015890;
+}
+section p {
+  margin-top: 50x;
+  text-align: justify;
+}
+section p:first-child {
+  margin-top: 0;
+}
+.topic {
+  border-top: 1px solid #e1e1e1;
+  border-right: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+  border-left: 1px solid #e1e1e1;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 5px 10px #E1E1E1 inset;
+  margin: 2px 0 5px;
+  padding: 5kpx;
+}
+.welcome {
+  margin-bottom: 5px;
+}
+.welcome  > header {
+  color: #226899;
+}
+.welcome  > p.more {
+  margin: 5px 0;
+}
+.more {
+  color: #92C75D;
+}
+.social-connect [class^="connect-"], .social-connect [class*=" connect-"] {
+  background-image: none;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 45px;
+  line-height: 45px;
+  vertical-align: text-top;
+  width: 45px;
+}
+.social-connect .connect-facebook {
+  background-image: url("images/facebook.png");
+}
+.social-connect .connect-twitter {
+  background-image: url("images/twitter.png");
+}
+.site-footer {
+  border-top: 1px solid #e1e1e1;
+  border-right: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+  border-left: 1px solid #e1e1e1;
+  border-radius: 10px;
+  height: 35px;
+  line-height: 35px;
+}
+.site-footer .app-navigation li {
+  display: block;
+  float: left;
+}
+.site-footer .app-navigation li a {
+  float: none;
+  line-height: 19px;
+  padding: 9px 10px 11px;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+/*
+  root element for the scrollable.
+  when scrolling occurs this element stays still.
+  */
+.scrollable {
+  /* required settings */
+
+  position: relative;
+  overflow: hidden;
+  width: 550px;
+  height: 120px;
+  /* custom decorations */
+
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  /*
+	   root element for scrollable items. Must be absolutely positioned
+	   and it should have a extremely large width to accomodate scrollable
+	   items.  it's enough that you set the width and height for the root
+	   element and not for this element.
+	*/
+
+  /* single scrollable item */
+
+  /* active item */
+
+}
+.scrollable .items {
+  /* this cannot be too large */
+
+  width: 20000em;
+  position: absolute;
+  clear: both;
+}
+.scrollable .items div {
+  float: left;
+  width: 680px;
+}
+.scrollable img {
+  float: left;
+  margin: 20px 5px 20px 21px;
+  background-color: #fff;
+  padding: 2px;
+  border: 1px solid #ccc;
+  width: 100px;
+  height: 75px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+.scrollable .active {
+  border: 2px solid #000;
+  position: relative;
+  cursor: default;
+}
+.scrollable-wrapper {
+  /* this makes it possible to add next button beside scrollable */
+
+  /* prev, next, prevPage and nextPage buttons */
+
+  /* right */
+
+  /* left */
+
+  /* up and down */
+
+  /* up */
+
+  /* down */
+
+  /* disabled navigational button */
+
+}
+.scrollable-wrapper .scrollable {
+  float: left;
+}
+.scrollable-wrapper a.browse {
+  background: url(images/arrow/hori_large.png) no-repeat;
+  display: block;
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin: 40px 10px;
+  cursor: pointer;
+  font-size: 1px;
+}
+.scrollable-wrapper a.right {
+  background-position: 0 -30px;
+  clear: right;
+  margin-right: 0px;
+}
+.scrollable-wrapper a.right:hover {
+  background-position: -30px -30px;
+}
+.scrollable-wrapper a.right:active {
+  background-position: -60px -30px;
+}
+.scrollable-wrapper a.left {
+  margin-left: 0px;
+}
+.scrollable-wrapper a.left:hover {
+  background-position: -30px 0;
+}
+.scrollable-wrapper a.left:active {
+  background-position: -60px 0;
+}
+.scrollable-wrapper a.up, .scrollable-wrapper a.down {
+  background: url(images/arrow/vert_large.png) no-repeat;
+  float: none;
+  margin: 10px 50px;
+}
+.scrollable-wrapper a.up:hover {
+  background-position: -30px 0;
+}
+.scrollable-wrapper a.up:active {
+  background-position: -60px 0;
+}
+.scrollable-wrapper a.down {
+  background-position: 0 -30px;
+}
+.scrollable-wrapper a.down:hover {
+  background-position: -30px -30px;
+}
+.scrollable-wrapper a.down:active {
+  background-position: -60px -30px;
+}
+.scrollable-wrapper a.disabled {
+  visibility: hidden !important;
+}
+.scrollable-wrapper.student a.browse {
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+.scrollable-wrapper.student .scrollable {
+  height: 125px;
+  width: 770px;
+}
+.scrollable-wrapper.student img {
+  cursor: pointer;
+}
+.nivoSlider img {
+  max-width: none;
+}
+.app-link {
+  cursor: pointer;
+  color: #0088CC;
+}
+textarea.height-small {
+  height: 60px;
+}
+textarea.height-medium {
+  height: 120px;
+}
+textarea.height-large {
+  height: 180px;
+}
+.list-view-item {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.list-view-item  > header {
+  background-color: rgba(93, 207, 195, 0.19999999999999996);
+  padding: 5px;
+  cursor: pointer;
+}
+.list-view-item .list-view-item-content {
+  padding-top: 5px;
+}
+.list-view-item .list-view-item-content  > section {
+  padding-bottom: 5px;
+}
+.list-view-item .list-view-item-content  > section:last-child {
+  padding-bottom: 0;
+}
+.app-ctrl-chkbx .controls label {
+  margin-left: 5px;
+}
+.app-combo {
+  display: inline;
+  position: relative;
+}
+.app-combo input.cb-autocomplete {
+  padding-right: 20px;
+  display: inline-block;
+}
+.app-combo i.queryall {
+  position: absolute;
+  right: 4px;
+  top: -1px;
+  margin-top: 3px;
+  cursor: pointer;
+}
+@media (min-width: 1200px) {
+  
+}
+@media (max-width: 767px) {
+  
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  
+}
+@media (max-width: 480px) {
+  
+}

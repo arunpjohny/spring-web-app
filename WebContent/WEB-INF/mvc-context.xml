@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd">
+
+	<mvc:annotation-driven validator="validator" />
+	<mvc:resources location="/resources/" mapping="/resources/**" />
+
+	<bean name="validator"
+		class="com.arunpjohny.core.spring.bind.validation.LocalValidatorFactoryBean">
+	</bean>
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
+	<bean id="exceptionResolver"
+		class="com.arunpjohny.core.spring.web.servlet.handler.ExceptionResolver">
+		<property name="warnLogCategory"
+			value="com.arunpjohny.core.spring.web.servlet.handler.ExceptionResolver" />
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.Exception">WEB-INF/templates/exception/exception</prop>
+			</props>
+		</property>
+		<property name="statusCodes">
+			<map>
+				<entry key="WEB-INF/templates/exception/exception" value="500" />
+			</map>
+		</property>
+		<property name="order" value="100" />
+	</bean>
+	<bean class="com.arunpjohny.core.exception.ExceptionMetadata">
+		<property name="exception" value="java.lang.Exception" />
+		<property name="converter"
+			value="#{ T(com.arunpjohny.core.exception.conversion.DefaultExceptionConverter).getInstance() }" />
+	</bean>
+	<bean class="com.arunpjohny.core.exception.ExceptionMetadata">
+		<property name="exception" value="org.springframework.validation.BindException" />
+		<property name="converter"
+			value="#{ T(com.arunpjohny.core.exception.conversion.BindExceptionConverter).getInstance() }" />
+	</bean>
+</beans>

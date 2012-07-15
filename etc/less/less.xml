@@ -1,0 +1,31 @@
+<project name="less_builder" default="less" basedir=".">
+	<property name="css.dir" location="../../webContent/resources" />
+	<property name="tool.less" location="less-rhino-1.1.5.js" />
+	<property name="tool.rhino" location="js-1.7R2.jar" />
+
+	<target name="less"
+		description="Convert LESS to CSS then concatenate and Minify any stylesheets">
+
+		<echo message="Converting LESS to CSS..." />
+		<!-- Clear the former compiled css files -->
+		
+		<delete file="../../webContent/resources/style.css"/>
+		<delete file="../../webContent/resources/style-ie8.css"/>
+
+		<apply dir="${css.dir}" executable="java" parallel="false" 
+			failonerror="true">
+			<!-- Give the input bundle of less files -->
+			<fileset dir="${css.dir}">
+				<include name="*.less" />
+			</fileset>
+			<arg value="-jar" />
+			<arg path="${tool.rhino}" />
+			<arg path="${tool.less}" />
+			<srcfile />
+			<!-- Output the compiled css file with corresponding name -->
+			<mapper type="glob" from="*.less" to="${css.dir}/*.css" />
+			<targetfile />
+		</apply>
+
+	</target>
+</project>

@@ -1,0 +1,551 @@
+@border-color: #E1E1E1;
+
+.mixin-round-border(@radius: 10px) {
+	border-radius: @radius;
+}
+
+.mixin-border-t(@width: 2px, @color: #E1E1E1) {
+	border-top: @width solid @color;
+}
+.mixin-border-r(@width: 2px, @color: #E1E1E1) {
+	border-right: @width solid @color;
+}
+.mixin-border-b(@width: 2px, @color: #E1E1E1) {
+	border-bottom: @width solid @color;
+}
+.mixin-border-l(@width: 2px, @color: #E1E1E1) {
+	border-left: @width solid @color;
+}
+
+.mixin-border(@width: 2px, @color: #E1E1E1) {
+	.mixin-border-t(@width, @color);
+	.mixin-border-r(@width, @color);
+	.mixin-border-b(@width, @color);
+	.mixin-border-l(@width, @color);
+}
+
+
+.mixin-icon(@height: 32px, @width: 32px) {
+    background-image: none;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: @height;
+    line-height: @height;
+    vertical-align: text-top;
+    width: @width;
+}
+
+body {
+	background-color: #E9E9E7;
+	overflow-y: scroll;
+}
+
+.zyb-logo {
+	padding: 10px 0;
+}
+
+.navbar-fixed-top {
+	background-color: #E7E7E9;
+
+	&+ .container{
+		margin-top: 40px;
+	}
+}
+
+.zyb-header {
+	height: 85px;
+	
+	.phone {
+		h4, h5, h6 {
+			display: inline;
+		}
+	}
+	
+	.email a{
+		color: #226899;
+	}
+}
+
+#page-container {
+	min-height: 300px;
+}
+
+.zyb-content {
+	background-color: #FFFFFF;
+	padding: 5px 10px;
+}
+
+.ajax-message-wrapper {
+	position: relative;
+    width: 100%;
+}
+
+#ajax-messages {
+	display: none;
+	position: fixed;
+    right: 5px;
+	top: 140px;
+}
+
+
+.theme-default .nivoSlider {
+	margin-bottom: 0px;
+}
+
+.text-right {
+	text-align: right;
+}
+.text-center {
+	text-align: center;
+}
+
+.bordered {
+	.mixin-border();
+}
+
+.bordered-light {
+	.mixin-border(1px);
+}
+.bordered-light-t {
+	.mixin-border-t(1px);
+}
+.bordered-light-r {
+	.mixin-border-r(1px);
+}
+.bordered-light-b {
+	.mixin-border-b(1px);
+}
+.bordered-light-l {
+	.mixin-border-l(1px);
+}
+
+.rounded-border {
+	.mixin-round-border();
+}
+.rounded-border-small {
+	.mixin-round-border(5px);
+}
+
+.title{
+	color: rgb(1, 88, 144);
+	margin-bottom: 5px;
+}
+
+.article { 
+
+	& > header {
+		.bordered-light();
+		.rounded-border-small();
+		
+		box-shadow: 0 0 5px 10px rgba(83, 83, 83, .1) inset;
+		color: #226899;
+		padding: 4px 6px;
+	}
+	
+	& > header.type2 {
+		border: none;
+		box-shadow: none;
+		
+		padding: 4px 6px 4px 0;
+		color: rgb(1, 88, 144);
+	}
+	
+	.bordered();
+	.rounded-border();
+	
+    margin: 5px 0;
+    min-height: 25px;
+    padding: 7px;
+}
+
+section {
+	p {
+		margin-top: 50x;
+		text-align: justify;
+		
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}
+
+.topic {
+	.bordered-light();
+	.rounded-border();
+	.text-center();
+	
+	box-shadow: 0 0 5px 10px #E1E1E1 inset;
+	margin: 2px 0 5px;
+	padding: 5kpx;
+}
+
+.welcome {
+	& > header {
+		color: #226899;
+	}
+	
+	& > article {
+	}
+	
+	& > p.more {
+		margin: 5px 0;
+	}
+	
+	margin-bottom: 5px;
+}
+
+.more {
+	color: #92C75D;
+}
+
+.social-connect {
+	[class^="connect-"], [class*=" connect-"] {
+		.mixin-icon(45px, 45px);
+	}
+
+	.connect-facebook {
+	    background-image: url("images/facebook.png");
+	}
+	.connect-twitter {
+	    background-image: url("images/twitter.png");
+	}
+}
+
+.contact-sidebar {
+
+	header,  header.type2 {
+		box-shadow: none;
+		padding: 5px 0;
+		text-align: left;
+	}
+
+	.more-links {
+		background-color: #FEFEFE;
+		margin-bottom: 10px;
+	
+		article > div {
+			border-bottom: 1px dashed #E1E1E1;
+			
+			margin-bottom: 10px;
+			
+			a {
+				color: #666;
+				
+				&:hover {
+					color: #B4EAC7;
+				}
+				
+				&:visited {
+					color: #666 !important;
+				}
+			}			
+		}
+	}
+	
+	.get-in-touch {
+		border: none;
+	
+		article > div {
+			border-bottom: 1px solid #E1E1E1;
+			
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.site-footer {
+	.bordered-light();
+	.rounded-border();
+
+	height: 35px;
+	line-height: 35px;
+	
+	.zyb-rights {
+	}
+	
+	.zyb-navigation {
+		li {
+			display: block;
+			float: left;
+			
+			a {
+				float: none;
+				line-height: 19px;
+				padding: 9px 10px 11px;
+				text-decoration: none;
+				text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+			}
+		}
+	}
+}
+
+
+/*
+  root element for the scrollable.
+  when scrolling occurs this element stays still.
+  */
+.scrollable {
+
+    /* required settings */
+    position:relative;
+    overflow:hidden;
+    width: 550px;
+    height:120px;
+
+    /* custom decorations */
+    border:1px solid #ccc;
+	border-radius: 10px;
+
+	/*
+	   root element for scrollable items. Must be absolutely positioned
+	   and it should have a extremely large width to accomodate scrollable
+	   items.  it's enough that you set the width and height for the root
+	   element and not for this element.
+	*/
+	.items {
+	    /* this cannot be too large */
+	    width:20000em;
+	    position:absolute;
+	    clear:both;
+
+		div {
+		    float:left;
+		    width:680px;
+		}
+	}
+
+	/* single scrollable item */
+	img {
+	    float:left;
+	    margin:20px 5px 20px 21px;
+	    background-color:#fff;
+	    padding:2px;
+	    border:1px solid #ccc;
+	    width:100px;
+	    height:75px;
+	
+	    -moz-border-radius:4px;
+	    -webkit-border-radius:4px;
+	}
+	
+	/* active item */
+	.active {
+	    border:2px solid #000;
+	    position:relative;
+	    cursor:default;
+	}
+}
+
+.scrollable-wrapper {
+
+	/* this makes it possible to add next button beside scrollable */
+	.scrollable {
+	    float:left;
+	}
+
+	/* prev, next, prevPage and nextPage buttons */
+	a.browse {
+		background: url(images/arrow/hori_large.png) no-repeat;
+		display: block;
+		width: 30px;
+		height: 30px;
+		float: left;
+		margin: 40px 10px;
+		cursor: pointer;
+		font-size: 1px;
+	}
+	
+	/* right */
+	a.right {
+		background-position: 0 -30px;
+		clear: right;
+		margin-right: 0px;
+	}
+	
+	a.right:hover {
+		background-position: -30px -30px;
+	}
+	
+	a.right:active {
+		background-position: -60px -30px;
+	}
+	
+	/* left */
+	a.left {
+		margin-left: 0px;
+	}
+	
+	a.left:hover {
+		background-position: -30px 0;
+	}
+	
+	a.left:active {
+		background-position: -60px 0;
+	}
+	
+	/* up and down */
+	a.up,a.down {
+		background: url(images/arrow/vert_large.png) no-repeat;
+		float: none;
+		margin: 10px 50px;
+	}
+	
+	/* up */
+	a.up:hover {
+		background-position: -30px 0;
+	}
+	
+	a.up:active {
+		background-position: -60px 0;
+	}
+	
+	/* down */
+	a.down {
+		background-position: 0 -30px;
+	}
+	
+	a.down:hover {
+		background-position: -30px -30px;
+	}
+	
+	a.down:active {
+		background-position: -60px -30px;
+	}
+	
+	/* disabled navigational button */
+	a.disabled {
+		visibility: hidden !important;
+	}
+
+	&.student {
+		a.browse {
+			margin-top: 45px;
+			margin-bottom: 45px;
+		}
+
+		.scrollable {
+			height: 125px;
+			width: 770px;
+		}
+		
+		img {
+			cursor: pointer;
+		}
+	}
+}
+
+.home-slider {
+	height: 350px;
+	margin: 0 auto;
+	padding-bottom: 50px;
+	width: 800px;
+}
+
+.nivoSlider {
+	img {
+		max-width: none;
+	}
+}
+
+.zyb-personnel {
+	.bordered-light();
+	.rounded-border();
+
+	margin-bottom: 10px;
+	padding: 5px;
+
+	.brief {
+		img {
+			height: 100px;
+		}
+
+		.details {
+			margin-left: 15px;
+		}
+	}
+
+	.summary {
+		margin-top: 5px;
+	}
+}
+
+.zyb-broucher {
+	.text-center();
+
+	padding-bottom: 10px;
+
+<<<<<<< HEAD
+	.brocher-dl {
+		.mixin-icon(42px, 192px);
+=======
+	a {
+		.mixin-icon(42px, 254px);
+>>>>>>> master
+		background: url(images/ebroucher-bg.png) no-repeat center;
+
+		a {
+			color: white;
+		}
+	}
+}
+
+.zyb-opening {
+	& > header {
+		.bordered-light();
+		.rounded-border();
+
+		background-color: lightgrey;
+		padding: 2px 5px;
+		margin-top: 5px;
+	}
+
+	.zyb-section {
+		.bordered-light();
+		.rounded-border();
+
+		padding: 5px;
+		margin-top: 5px;
+		min-height: 70px;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}
+
+.zyb-placement-openings {
+
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+	& > header {
+		color: #015890;
+	}
+
+	& > footer {
+		margin-top: 5px;
+		min-height: 18px;
+	}
+}
+
+.zyb-link {
+	cursor: pointer;
+	color: #0088CC;
+}
+
+.zyb-btn-wrapper {
+	min-height: 28px;
+	padding: 5px 0;
+}
+
+textarea {
+	&.height-small {
+		height: 60px;
+	}
+	&.height-medium {
+		height: 120px;
+	}
+	&.height-large {
+		height: 180px;
+	}
+}

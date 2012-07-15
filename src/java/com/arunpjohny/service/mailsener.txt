@@ -1,0 +1,28 @@
+public class MailSender extends JavaMailSenderImpl implements InitializingBean {
+
+    private Boolean smtpSSLEnabled;
+
+
+    /**
+     * We will check the configuration, and populate the propertes in the JavaMailSenderImpl bean.
+     */
+    public void afterPropertiesSet() throws Exception {
+        Properties properties = new Properties();
+        if (smtpSSLEnabled) {
+            properties.setProperty("mail.smtp.auth", "true");
+            properties.setProperty("mail.smtp.starttls.enable", "true");
+            properties.setProperty("mail.smtp.timeout", "8500");
+            setJavaMailProperties(properties);
+        }
+    }
+
+
+    public void setSmtpSSLEnabled(final Boolean smtpSSLEnabled) {
+        this.smtpSSLEnabled = smtpSSLEnabled;
+    }
+
+
+}
+<bean id="mailSender" class="com.codersatwork.email.MailSender"
+          p:host="smtp.gmail.com" p:port="25" p:username="saurabh.agrawal18@gmail.com" p:password="12345"
+          p:smtpSSLEnabled="true"/>
